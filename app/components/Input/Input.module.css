@@ -1,0 +1,11 @@
+.input {
+    display: flex;
+    min-height: 48px;
+    padding: 8px 16px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    align-items: center;
+}
