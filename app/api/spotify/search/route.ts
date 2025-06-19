@@ -2,7 +2,7 @@ import { getSpotifyAccessToken } from "@/lib/getSpotifyAccessToken";
 
 const accessToken = await getSpotifyAccessToken();
 
-export async function GET(request) {
+export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const query = searchParams.get("q");
 
@@ -18,7 +18,7 @@ export async function GET(request) {
   const res = await fetch(
     `https://api.spotify.com/v1/search?q=${encodeURIComponent(
       query
-    )}&type=track&limit=10`, {
+    )}&type=track&limit=20`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },

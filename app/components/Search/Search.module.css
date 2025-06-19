@@ -1,0 +1,62 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 16px;
+    & label {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+    }
+    & input {
+        padding: 8px 16px;
+        border: 1px solid gray;
+        border-radius: 8px;
+    }
+    & button {
+        flex-grow: 0;
+        width: fit-content;
+        align-self: flex-start;
+    }
+}
+
+.results { 
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 16px;
+    border-radius: 16px;
+    overflow: hidden;
+ }
+
+.song {
+    display: flex;
+    background: #eee;
+    flex-direction: row;
+    padding: 16px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    align-items: center;
+}
+
+.songImage {
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    border-radius: 8px;
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.songInfo {
+    padding: 8px;
+}
+
+.actionGroup {
+    margin-left: auto;
+}

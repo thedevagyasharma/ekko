@@ -1,12 +1,6 @@
-{
-  "tracks": {
-    "href": "https://api.spotify.com/v1/search?offset=0&limit=20&query=dubstep&type=track&locale=*",
-    "limit": 20,
-    "next": "https://api.spotify.com/v1/search?offset=20&limit=20&query=dubstep&type=track&locale=*",
-    "offset": 0,
-    "previous": null,
-    "total": 916,
-    "items": [
+import type { Track } from "@/types/spotify";
+
+export const sampleTracks: Track[] =  [
       {
         "album": {
           "album_type": "single",
@@ -8811,6 +8805,4 @@
         "type": "track",
         "uri": "spotify:track:2nKIrfg7FFmaWYTtquutcK"
       }
-    ]
-  }
-}
+]

@@ -1,4 +1,4 @@
-let cachedToken = null;
+let cachedToken: string | null = null;
 let tokenExpiresAt = 0;
 
 export async function getSpotifyAccessToken() {
@@ -19,7 +19,7 @@ export async function getSpotifyAccessToken() {
   const data = await res.json();
 
   cachedToken = data.access_token;
-  tokenExpiresAt = Date.now() + data.expires_in * 1000;
+  tokenExpiresAt = Date.now() + data.expires_in * 1000 - 60_000;
 
   return cachedToken;
 }
