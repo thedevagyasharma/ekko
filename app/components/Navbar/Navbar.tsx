@@ -12,7 +12,7 @@ const style_NAVBUTTON__ACTIVE = style_NAVBUTTON + ' bg-zinc-300 hover:bg-zinc-30
 const Navbar = ({currentView, setView}: NavbarProps) => {
 
     return(
-        <nav className="flex flex-col gap-2 center">
+        <nav className="flex flex-col gap-2 center h-full">
             <button
                 className={(currentView === 'search') ? style_NAVBUTTON__ACTIVE : style_NAVBUTTON }
                 onClick={()=>setView('search')}
@@ -25,6 +25,10 @@ const Navbar = ({currentView, setView}: NavbarProps) => {
             >
                 <LibraryBig />Library
             </button>
+            <div className="relative group mt-auto">
+                <a className={style_NAVBUTTON} href="https://getsongbpm.com/"> <img className="w-10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQty8vQohWui6NAm-wHWnQoNZwZW0GbfNVroA&s" alt="Created with GetSongbpm.com" /></a>
+                <p className="absolute left-full top-1/2 -translate-y-1/2 ml-2 opacity-0 group-hover:opacity-100 bg-zinc-200 text-zinc-800 font-medium text-sm px-2 py-1 rounded-full whitespace-nowrap pointer-events-none transition-opacity duration-200">Made with GetSongbpm.com</p>
+            </div>
         </nav>
     );
 }

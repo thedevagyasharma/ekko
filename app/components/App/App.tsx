@@ -23,7 +23,7 @@ const App = () => {
 
     return (
         <div className="flex h-screen p-4 gap-4">
-            <div className='w-auto bg-zinc-100 rounded-lg text-zinc-900'>
+            <div className='w-auto h-full bg-zinc-100 rounded-lg text-zinc-900'>
                 <Navbar currentView={view} setView={setView} />
             </div>
             <main>
