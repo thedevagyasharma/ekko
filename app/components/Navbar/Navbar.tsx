@@ -26,7 +26,7 @@ const Navbar = ({currentView, setView}: NavbarProps) => {
                 <LibraryBig />Library
             </button>
             <div className="relative group mt-auto">
-                <a className={style_NAVBUTTON} href="https://getsongbpm.com/"> <img className="w-10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQty8vQohWui6NAm-wHWnQoNZwZW0GbfNVroA&s" alt="Created with GetSongbpm.com" /></a>
+                <a className={style_NAVBUTTON} href="https://getsongbpm.com/" target="_blank" rel='noopener noreferrer'> <img className="w-10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQty8vQohWui6NAm-wHWnQoNZwZW0GbfNVroA&s" alt="Made with GetSongbpm.com" /><span className='sr-only'>Made with GetSongbpm.com</span></a>
                 <p className="absolute left-full top-1/2 -translate-y-1/2 ml-2 opacity-0 group-hover:opacity-100 bg-zinc-200 text-zinc-800 font-medium text-sm px-2 py-1 rounded-full whitespace-nowrap pointer-events-none transition-opacity duration-200">Made with GetSongbpm.com</p>
             </div>
         </nav>
