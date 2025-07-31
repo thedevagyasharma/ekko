@@ -1,4 +1,4 @@
-import type { EnrichedTrack, AudioFeatures } from '@/types/spotify';
+import type { EnrichedTrack, SongNotes } from '@/types/spotify';
 
 const LIBRARY_KEY = 'myLib';
 
@@ -27,4 +27,15 @@ export function removeFromLibrary(trackId: string) {
 
 export function isInLibrary(trackId: string): boolean {
     return getLibrary().some(t=> t.id === trackId);
+}
+
+export function updateSongNotes(trackId: string, notes: SongNotes){
+    const library = getLibrary();
+    const updatedLibrary = library.map((track) => {
+        if (track.id === trackId){
+            return {...track, notes };
+        }
+        return track;
+    });
+    saveLibrary(updatedLibrary);
 }

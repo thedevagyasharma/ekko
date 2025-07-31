@@ -1,18 +1,19 @@
-import { Search, LibraryBig } from "lucide-react";
+import { Search, Notebook, Package } from "lucide-react";
 
 type NavbarProps = {
     currentView: string;
     setView: (view: string) => void;
 }
 
-const style_NAVBUTTON = 'flex flex-col items-center text-xs uppercase font-800 gap-1 p-2 m-2 rounded-md hover:bg-zinc-200 transition duration-150 ease-in-out active:bg-zinc-300';
+const style_NAVBUTTON = 'flex items-center text-xs uppercase font-800 gap-1 px-4 py-2 m-0 rounded-t-lg border border-b-0 border-transparent bg-zinc-100  hover:bg-zinc-200 transition duration-150 ease-in-out active:bg-zinc-300';
 
-const style_NAVBUTTON__ACTIVE = style_NAVBUTTON + ' bg-zinc-300 hover:bg-zinc-300';
+const style_NAVBUTTON__ACTIVE = style_NAVBUTTON + ' bg-zinc-350 border-zinc-300 hover:bg-zinc-300';
+
 
 const Navbar = ({currentView, setView}: NavbarProps) => {
 
     return(
-        <nav className="flex flex-col gap-2 center h-full">
+        <nav className="flex gap-0 center w-full">
             <button
                 className={(currentView === 'search') ? style_NAVBUTTON__ACTIVE : style_NAVBUTTON }
                 onClick={()=>setView('search')}
@@ -20,15 +21,17 @@ const Navbar = ({currentView, setView}: NavbarProps) => {
                 <Search/> Search
             </button>
             <button
-                className={(currentView === 'library') ? style_NAVBUTTON__ACTIVE : style_NAVBUTTON }
-                onClick={()=>setView('library')}
+                className={(currentView === 'notes') ? style_NAVBUTTON__ACTIVE : style_NAVBUTTON }
+                onClick={()=>setView('notes')}
             >
-                <LibraryBig />Library
+                <Notebook /> Notes
             </button>
-            <div className="relative group mt-auto">
-                <a className={style_NAVBUTTON} href="https://getsongbpm.com/" target="_blank" rel='noopener noreferrer'> <img className="w-10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQty8vQohWui6NAm-wHWnQoNZwZW0GbfNVroA&s" alt="Made with GetSongbpm.com" /><span className='sr-only'>Made with GetSongbpm.com</span></a>
-                <p className="absolute left-full top-1/2 -translate-y-1/2 ml-2 opacity-0 group-hover:opacity-100 bg-zinc-200 text-zinc-800 font-medium text-sm px-2 py-1 rounded-full whitespace-nowrap pointer-events-none transition-opacity duration-200">Made with GetSongbpm.com</p>
-            </div>
+            <button
+                className={(currentView === 'crates') ? style_NAVBUTTON__ACTIVE : style_NAVBUTTON }
+                onClick={()=>setView('crates')}
+            >
+                <Package /> Crates
+            </button>
         </nav>
     );
 }

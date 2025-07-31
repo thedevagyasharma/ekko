@@ -1,9 +1,16 @@
 @import "tailwindcss";
+@plugin 'tailwind-scrollbar';
 
 input {
   padding: 8px 16px;
   border-radius: 8px;
   border: 1px solid var(--color-zinc-500);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
 }
 
 /* button {

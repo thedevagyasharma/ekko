@@ -79,6 +79,13 @@ export type AudioFeatures = {
   time_signature: number;
 };
 
+export type SongNotes = {
+  bpm: number;
+  key: number;
+  energy: number;
+}
+
 export type EnrichedTrack = Track & {
   audio_features?: AudioFeatures;
+  notes?: SongNotes;
 }
